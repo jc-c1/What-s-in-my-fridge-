@@ -8,7 +8,7 @@ export const Items = ({ item, handleCheck }) => {
     const [update, setUpdate] = useState(false);
  
     const daysUntilExpiry = (item.expiry.toDate() - new Date()) / (1000 * 60 * 60 * 24);
-    const textColor = daysUntilExpiry > 5 ? "red" : "blue";
+    const textColor = daysUntilExpiry < 5 ? "red" : "blue";
 
 
     const handleUpdateStatus = (status) => {

@@ -11,17 +11,18 @@ export const GeminiComponent = ({ ing }) => {
         i.quantity.toString() + " " + i.unit + "(s) of " + i.name
     )).join(", ")
 
-    const prompt = "Can you please make give me a beginner-friendly recipe that uses " + ingList + "? Please only include only the name of the dish, the ingredients, and the instructions. Can you also format the response with html tags starting from the <p> tag?"
+    const prompt = "Can you please make give me a beginner-friendly recipe that must use some of the following ingredients: " + ingList + "? Please only include only the name of the dish, the ingredients, and the instructions. Can you also format the response with html tags starting from the <p> tag?"
 
     // const [prompt, setPrompt] = useState("");
     const [generatedText, setGeneratedText] = useState("");
 
     const handleGenerate = async (prompt) => {
         try {
+            console.log(prompt)
             const result = await model.generateContent(prompt);
             const response = await result.response;
             const text = response.text();
-            console.log(text)
+            
             // Update the UI with the generated response
 
             setGeneratedText(text);

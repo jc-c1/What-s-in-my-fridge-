@@ -16,11 +16,11 @@ export const Inventory = () => {
 
     const handleCheck = (isChecked, item) => {
         try {
-            if (isChecked == true) {
+            if (isChecked === true) {
                 checkedItems.push(item)
 
             } else {
-                checkedItems = checkedItems.filter(i => i != item)
+                checkedItems = checkedItems.filter(i => i !== item)
             }
         } catch (err) {
             console.error(err)
@@ -62,7 +62,11 @@ export const Inventory = () => {
             {inventoryList.map((item) => (
                 <Items key={item.id} item={item} handleCheck={handleCheck} />
             ))}
-            <GeminiComponent ing={checkedItems} />
+
+            <div style={{ marginTop: "15px" }}>
+                <GeminiComponent ing={checkedItems} />
+            </div>
+
         </div>
     );
 

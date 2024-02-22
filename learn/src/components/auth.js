@@ -63,8 +63,8 @@ export const Auth = () => {
     const authenticatedContent = () => {
         return (
             <div>
-                <p>Name: {user?.email}</p>
-                <button onClick={logout}>Logout</button>
+                <p>User: {user?.email}</p>
+                <button style={{marginBottom:"10px"}} onClick={logout}>Logout</button>
             </div>
         );
     };

@@ -13,9 +13,13 @@ function App() {
 
       <Auth />
 
-      <Inventory />
+      <div style={{ display: "flex", alignItems:"center", justifyContent:"space-around"}}>
+        <div style = {{maxWidth:"200em"}}><Inventory /></div>
+        <div style = {{margin:"10px"}}><AddItem /></div>
 
-      <AddItem />
+        </div>
+
+
 
     </div>
   );
